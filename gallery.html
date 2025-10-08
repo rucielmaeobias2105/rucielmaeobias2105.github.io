@@ -27,7 +27,7 @@
     object-fit: cover;
   }
 
-  /* Slider container */
+  /* Slider  */
   .slider {
     position: relative;
     width: 80%;
@@ -39,7 +39,7 @@
     background: transparent;
   }
 
-  /* Each slide */
+  /*  slide */
   .slide {
     position: absolute;
     display: flex;
@@ -53,7 +53,7 @@
 
   .slide.current { opacity: 1; z-index: 1; }
 
-  /* Image on left */
+  /* Image */
   .slide img {
     width: 50%;
     aspect-ratio: 4 / 5;
@@ -64,7 +64,7 @@
     position: relative;
   }
 
-  /* Content on right */
+  /* Content  */
   .content {
     width: 50%;
     padding: 20px;
@@ -76,13 +76,13 @@
   .content h1 { margin-bottom: 10px; font-size: 2rem; }
   .content p { font-size: 1.2rem; }
 
-  /* Navigation buttons only on image */
+  /* Navigation  */
   .buttons {
     position: absolute;
     top: 50%;
     left: 0;
     display: flex;
-    width: 50%; /* covers only image area */
+    width: 50%; 
     justify-content: space-between;
     transform: translateY(-50%);
     padding: 0 10px;
@@ -102,7 +102,7 @@
 
   .buttons button:hover { background: rgba(96,243,219,0.8); }
 
-  /* Responsive */
+
   @media (max-width: 900px) {
     .slide { flex-direction: column; justify-content: center; gap: 10px; }
     .slide img, .content { width: 100%; }
