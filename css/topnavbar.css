@@ -1,30 +1,101 @@
-   <style>
-        body{
-            margin: 0;
-           /* font-family: Arial, Helvetica, sans-serif;*/
-        }
-        
-        .topnav{
-            overflow: hidden;
-            background-color: #333;
-        }
+body {
+  margin: 0;
+  background: #ffffff; 
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-        .topnav a {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
 
-        .topnav a:hover{
-            background-color: aqua;
-            color: rgb(0, 0, 0);
-        }
+.topnav {
+  overflow: hidden;
+  background-color: #111;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  padding: 12px 30px; 
+  position: relative;
+  border-radius: 15px;
+  margin: 20px auto;
+  width: 90%;
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+}
 
-        .topnav a.active{
-            background-color: rgba(255, 255, 255, 0.726);
-            color: rgb(0, 0, 0);
-        }
-    </style>
+
+.topnav::before,
+.topnav::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  box-shadow: 0 0 15px #00ffff, 0 0 25px #ff00ff;
+}
+
+
+.topnav::before {
+  top: -6px;
+  left: -6px;
+  border-top: 3px solid #00ffff;
+  border-left: 3px solid #ff00ff;
+}
+
+
+.topnav::after {
+  bottom: -6px;
+  right: -6px;
+  border-bottom: 3px solid #ff00ff;
+  border-right: 3px solid #00ffff;
+}
+
+
+.topnav a {
+  position: relative;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 0 15px;
+  padding: 14px 22px;
+  border-radius: 50px;
+  transition: 0.3s;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.topnav a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  padding: 2px;
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
+  background-size: 200% 200%;
+  animation: neonRotate 3s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+
+.topnav a:hover {
+  color: #000;
+  background-color: #00ffff;
+  box-shadow: 0 0 15px #00ffff, 0 0 25px #ff00ff, 0 0 40px #00ffff;
+}
+
+
+.topnav a.active {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff, 0 0 80px #ff00ff;
+}
+
+@keyframes neonRotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
