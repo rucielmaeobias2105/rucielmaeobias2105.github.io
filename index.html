@@ -1,27 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href="css/topnavbar.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <title>HOME</title> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <title>HOME</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #523694;
+      color: white;
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      padding-bottom: 100px; /* space for footer */
+    }
+
+   
+    .topnav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #111;
+      display: flex;
+      align-items: center;
+      padding: 10px 40px;
+      z-index: 1000;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff) 1;
+      box-shadow: 0 0 20px rgba(0,255,255,0.4);
+    }
 
  
+    .profile-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
+    .profile-pic {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
+      background-size: 200%;
+      padding: 3px;
+      animation: neonRotate 5s linear infinite;
+    }
+
+    .profile-name {
+      font-size: 18px;
+      color: #fff;
+      font-weight: 600;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+    }
+
+    @keyframes neonRotate {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+ 
+    .content {
+      margin-top: 140px;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #00ffff;
+      text-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
+      animation: glowText 3s infinite alternate;
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff; }
+      to { text-shadow: 0 0 30px #ff00ff, 0 0 60px #00ffff; }
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+    }
+
+    
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .button-group a {
+      position: relative;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 12px 28px;
+      border-radius: 50px;
+      transition: 0.4s;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .button-group a::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff, #ff00ff);
+      background-size: 400%;
+      border-radius: 50px;
+      filter: blur(2px);
+      animation: neonMove 6s linear infinite;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .button-group a:hover::before,
+    .button-group a.active::before {
+      opacity: 1;
+    }
+
+    .button-group a:hover,
+    .button-group a.active {
+      color: #000;
+      background: #fff;
+      box-shadow: 0 0 15px #00ffff, 0 0 25px #ff00ff;
+    }
+
+    @keyframes neonMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+ 
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      background-color: #111;
+      font-size: 14px;
+      color: #aaa;
+      border-top: 3px solid;
+      border-image: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff) 1;
+      box-shadow: 0 -2px 15px rgba(255,0,255,0.3);
+      z-index: 100;
+    }
+
+    footer span {
+      color: #00ffff;
+    }
+  </style>
 </head>
+
 <body>
-     <div class= "topnav">
-            <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i>Home</a>
-            <a href="resume.html"> <i class="fa fa-fw fa-user"></i>Resume</a>
-            <a href="gallery.html"><i class="fa fa-fw fa-images"></i>Gallery</a>
-            <a href="register.html"> <i class="fa fa-fw fa-file-signature"></i>Register</a>    
-    </div>
 
-    <div style="padding-left: 16px;">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quidem ad numquam aut, expedita mollitia qui magnam sed deleniti tempora modi enim dignissimos minima sunt inventore tenetur eos harum totam!
 
+  <div class="topnav">
+    <div class="profile-section">
+      <img src="images/5.jpg" alt="Profile" class="profile-pic">
+      <span class="profile-name">Ruciel Mae Obias</span>
     </div>
-    <script src="js/midterm.js"></script>
+  </div>
+
+
+  <div class="content">
+    <h1>Welcome to My Website</h1>
+    
+
+ 
+    <div class="button-group">
+      <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="resume.html"><i class="fa fa-fw fa-user"></i> Resume</a>
+      <a href="gallery.html"><i class="fa fa-fw fa-images"></i> Gallery</a>
+      <a href="register.html"><i class="fa fa-fw fa-file-signature"></i> Register</a>
+    </div>
+  </div>
+
+
+  <footer>
+    © 2025 <span>RUCIEL MAE OBIAS</span> | HOME PAGE
+  </footer>
+
 </body>
 </html>
