@@ -8,6 +8,7 @@
   <title>REGISTER</title>
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -15,38 +16,41 @@
     }
 
     body {
-     overflow: hidden;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+      background-color: #f4f6f9;
+      font-family: "Poppins", sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 100px 0 120px; /* top for navbar, bottom for footer */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-y: auto;
     }
-
-    /* ===== HEADER ===== */
-    h3 {
+        h3 {
       text-align: center;
-      color: #222;
-      font-size: 28px;
+      color: #111;
+      font-size: 34px;
+      font-weight: 700;
       letter-spacing: 1px;
-      margin-bottom: 10px;
+      margin-bottom: 25px;
     }
 
     /* ===== FORM CONTAINER ===== */
     form {
       background: #fff;
-      width: 90%;
-      max-width: 480px;
-      padding: 25px 35px;
-      border-radius: 10px;
+      width: 95%;
+      max-width: 650px; /* fatter */
+      padding: 50px 60px; /* spacious */
+      border-radius: 16px;
       border: 1px solid #ccc;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
     }
 
     form:hover {
       transform: translateY(-3px);
-      box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
     }
 
     label {
@@ -59,44 +63,56 @@
 
     input, select {
       width: 100%;
-      padding: 10px;
+      padding: 14px 12px;
       border: 1px solid #aaa;
-      border-radius: 6px;
+      border-radius: 8px;
       background: #fdfdfd;
       color: #333;
-      font-size: 15px;
-      margin-bottom: 15px;
+      font-size: 16px;
+      margin-bottom: 18px;
       transition: border 0.3s ease, box-shadow 0.3s ease;
     }
 
     input:focus, select:focus {
       outline: none;
       border-color: #0078ff;
-      box-shadow: 0 0 5px rgba(0,120,255,0.3);
+      box-shadow: 0 0 6px rgba(0,120,255,0.3);
     }
 
-    /* ===== BUTTONS ===== */
+
+    .birthday-selects {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .birthday-selects select {
+      flex: 1;
+    }
+
+
     .btn-group {
       display: flex;
       justify-content: space-between;
-      margin-top: 10px;
+      margin-top: 20px;
+      gap: 10px;
     }
 
     input[type="submit"],
     input[type="reset"] {
-      width: 48%;
+      flex: 1;
       background: #0078ff;
       border: none;
       color: white;
       font-weight: 600;
-      padding: 12px;
-      border-radius: 6px;
+      padding: 14px;
+      border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     input[type="reset"] {
-      background: #999;
+      background: #888;
     }
 
     input[type="submit"]:hover {
@@ -104,7 +120,7 @@
     }
 
     input[type="reset"]:hover {
-      background: #777;
+      background: #666;
     }
 
     /* ===== FOOTER ===== */
@@ -125,8 +141,9 @@
 
     footer span {
       color: #0078ff;
+      font-weight: 600;
     }
-
+  </style>
   </style>
 </head>
 <body>
