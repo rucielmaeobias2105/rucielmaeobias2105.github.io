@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HOME</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: #523694;
+      background: linear-gradient(135deg, #3b2b78, #523694, #9b5de5);
+      background-size: 300% 300%;
+      animation: bgMove 12s ease infinite;
       color: white;
       font-family: "Poppins", sans-serif;
       overflow-x: hidden;
-      min-height: 100vh;
-      padding-bottom: 100px; /* space for footer */
+      scroll-behavior: smooth;
+      padding-bottom: 100px;
     }
 
-   
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ===== NAVBAR ===== */
     .topnav {
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       width: 100%;
       background-color: #111;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 10px 40px;
       z-index: 1000;
       border-bottom: 3px solid;
       border-image: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff) 1;
       box-shadow: 0 0 20px rgba(0,255,255,0.4);
     }
+
     .profile-section {
       display: flex;
       align-items: center;
@@ -44,14 +48,19 @@
     }
 
     .profile-pic {
-      width: 55px;
-      height: 55px;
+      width: 55px; height: 55px;
       border-radius: 50%;
       border: 3px solid transparent;
       background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
       background-size: 200%;
       padding: 3px;
       animation: neonRotate 5s linear infinite;
+    }
+
+    @keyframes neonRotate {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .profile-name {
@@ -61,43 +70,8 @@
       text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
     }
 
-    @keyframes neonRotate {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
- 
-    .content {
-      margin-top: 140px;
-      text-align: center;
-      padding: 40px;
-    }
-
-    .content h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      color: #00ffff;
-      text-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
-      animation: glowText 3s infinite alternate;
-    }
-
-    @keyframes glowText {
-      from { text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff; }
-      to { text-shadow: 0 0 30px #ff00ff, 0 0 60px #00ffff; }
-    }
-
-    .content p {
-      font-size: 18px;
-      color: #ccc;
-      max-width: 700px;
-      margin: 0 auto 40px auto;
-    }
-
-    
     .button-group {
       display: flex;
-      justify-content: center;
       gap: 25px;
       flex-wrap: wrap;
     }
@@ -106,8 +80,8 @@
       position: relative;
       color: white;
       text-decoration: none;
-      font-size: 18px;
-      padding: 12px 28px;
+      font-size: 16px;
+      padding: 10px 20px;
       border-radius: 50px;
       transition: 0.4s;
       overflow: hidden;
@@ -117,11 +91,10 @@
     .button-group a::before {
       content: "";
       position: absolute;
-      top: -2px;
-      left: -2px;
+      top: -2px; left: -2px;
       width: calc(100% + 4px);
       height: calc(100% + 4px);
-      background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff, #ff00ff);
+      background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
       background-size: 400%;
       border-radius: 50px;
       filter: blur(2px);
@@ -131,13 +104,11 @@
       transition: opacity 0.3s ease;
     }
 
-    .button-group a:hover::before,
-    .button-group a.active::before {
+    .button-group a:hover::before, .button-group a.active::before {
       opacity: 1;
     }
 
-    .button-group a:hover,
-    .button-group a.active {
+    .button-group a:hover, .button-group a.active {
       color: #000;
       background: #fff;
       box-shadow: 0 0 15px #00ffff, 0 0 25px #ff00ff;
@@ -149,23 +120,144 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* ===== HERO ===== */
+    .hero {
+      margin-top: 130px;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      color: #00ffff;
+      text-shadow: 0 0 20px #ff00ff;
+      animation: glowText 3s infinite alternate;
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff; }
+      to { text-shadow: 0 0 30px #ff00ff, 0 0 60px #00ffff; }
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #ddd;
+      max-width: 700px;
+      margin: 20px auto 40px auto;
+    }
+
+    /* ===== FUN FACT CARDS ===== */
+    .fun-facts {
+      text-align: center;
+      margin: 60px auto;
+      padding: 30px;
+      max-width: 1000px;
+    }
+
+    .fun-facts h2 {
+      margin-bottom: 30px;
+      color: #00ffff;
+      font-size: 28px;
+      text-shadow: 0 0 10px #ff00ff;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      width: 260px;
+      border-radius: 20px;
+      text-align: center;
+      padding: 25px 20px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00ffff, 0 0 35px #ff00ff;
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #00ffff;
+      box-shadow: 0 0 15px #ff00ff80;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      color: #fff;
+      margin-top: 10px;
+      text-shadow: none;
+      border: none;
+      background: none;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #ccc;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    /* ===== QUOTE ===== */
+    .quote {
+      text-align: center;
+      margin: 60px auto;
+      max-width: 700px;
+      padding: 40px;
+      border-radius: 20px;
+      background: linear-gradient(90deg, #00ffff20, #ff00ff20);
+      animation: fadeQuote 6s infinite alternate;
+    }
+
+    @keyframes fadeQuote {
+      0% { opacity: 0.7; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1.05); }
+    }
+
+    .quote p {
+      font-size: 20px;
+      color: #fff;
+      font-style: italic;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0; left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      background-color: #111;
+      font-size: 14px;
+      color: #aaa;
+      border-top: 3px solid;
+      border-image: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff) 1;
+      box-shadow: 0 -2px 15px rgba(255,0,255,0.3);
+      z-index: 100;
+    }
+
+    footer span { color: #00ffff; }
   </style>
 </head>
 
 <body>
-
 
   <div class="topnav">
     <div class="profile-section">
       <img src="images/5.jpg" alt="Profile" class="profile-pic">
       <span class="profile-name">Ruciel Mae Obias</span>
     </div>
-  </div>
 
-  <div class="content">
-    <h1>Welcome to My Website</h1>
-    <br> <br>
- 
     <div class="button-group">
       <a class="active" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
       <a href="resume.html"><i class="fa fa-fw fa-user"></i> Resume</a>
@@ -174,5 +266,39 @@
     </div>
   </div>
 
+  <section class="hero">
+    <h1>Hello, I'm <span style="color:#ff00ff;">Ruciel Mae Obias</span></h1>
+    <p>A passionate 3rd Year Computer Science Student at DCCP-Bangued, with a strong interest in web design and development. I enjoy creating creative and responsive websites that blend functionality and beauty.</p>
+  </section>
+
+  <section class="fun-facts">
+    <h2>🌸 Fun Facts About Me</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>📖 Wattpad Reading</h3>
+        <p>I love immersing myself in stories that spark imagination and emotion.</p>
+      </div>
+
+      <div class="card">
+       
+        <h3>🧶 Crocheting</h3>
+        <p>Creating handmade crafts helps me relax and relieve stress.</p>
+      </div>
+
+      <div class="card">
+        <h3>🎵 Listening to Hillsongs</h3>
+        <p>Music brings peace and strengthens my faith.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <p>“Creativity is intelligence having fun.”</p>
+  </section>
+
+  <footer>
+    © 2025 <span>RUCIEL MAE OBIAS</span> | HOME PAGE
+  </footer>
 </body>
 </html>
