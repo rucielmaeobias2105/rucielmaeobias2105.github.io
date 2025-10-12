@@ -1,12 +1,12 @@
-
+/* ===== FIXED FULL-WIDTH TOP NAVBAR ===== */
 .topnav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%; /* Full width across the screen */
   background-color: #111;
   display: flex;
-  justify-content: flex-start; 
+  justify-content: flex-start; /* Buttons on the left */
   align-items: center;
   padding: 16px 40px;
   z-index: 1000;
@@ -15,7 +15,7 @@
   box-shadow: 0 0 15px rgba(0,255,255,0.3);
 }
 
-
+/* Keep existing button design */
 .topnav a {
   position: relative;
   color: white;
@@ -29,6 +29,7 @@
   z-index: 1;
 }
 
+/* Neon border effect for each button */
 .topnav a::before {
   content: "";
   position: absolute;
@@ -65,7 +66,7 @@
   100% { background-position: 0% 50%; }
 }
 
-
+/* ===== FIXED FOOTER (Full Width) ===== */
 footer {
   position: fixed;
   bottom: 0;
