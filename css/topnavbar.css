@@ -1,4 +1,4 @@
-/* ===== FIXED FULL-WIDTH TOP NAVBAR ===== */
+
 .topnav {
   position: fixed;
   top: 0;
@@ -15,7 +15,6 @@
   box-shadow: 0 0 15px rgba(0,255,255,0.3);
 }
 
-/* Keep existing button design */
 .topnav a {
   position: relative;
   color: white;
@@ -29,7 +28,7 @@
   z-index: 1;
 }
 
-/* Neon border effect for each button */
+
 .topnav a::before {
   content: "";
   position: absolute;
@@ -66,7 +65,6 @@
   100% { background-position: 0% 50%; }
 }
 
-/* ===== FIXED FOOTER (Full Width) ===== */
 footer {
   position: fixed;
   bottom: 0;
