@@ -13,7 +13,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       background: linear-gradient(135deg, #0078ff, #00c6ff);
       font-family: "Poppins", sans-serif;
@@ -24,13 +23,11 @@
       align-items: center;
       animation: fadeIn 1.2s ease-in-out;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ===== HEADER ===== */
     h3 {
       text-align: center;
       color: #fff;
@@ -40,7 +37,6 @@
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
 
-    /* ===== FORM CONTAINER ===== */
     form {
       background: #fff;
       width: 90%;
@@ -114,7 +110,6 @@
       padding-left: 10px;
     }
 
-    /* ===== BUTTONS ===== */
     .btn-group {
       display: flex;
       justify-content: space-between;
@@ -166,8 +161,6 @@
       opacity: 1;
       transition: 0s;
     }
-
-    /* ===== FOOTER ===== */
     footer {
       position: fixed;
       bottom: 0;
@@ -190,7 +183,7 @@
 </head>
 <body>
 
-  <!-- ===== TOP NAVBAR ===== -->
+
   <div class="topnav">
     <a href="index.html"><i class="fa fa-fw fa-home"></i>Home</a>
     <a href="resume.html"><i class="fa fa-fw fa-user"></i>Resume</a>
@@ -198,7 +191,6 @@
     <a class="active" href="register.html"><i class="fa fa-fw fa-file-signature"></i>Register</a>
   </div>
 
-  <!-- ===== FORM CONTENT ===== -->
   <h3>REGISTER</h3>
   <form id="registerForm">
     <div class="input-group">
@@ -217,7 +209,7 @@
       <option value="Female">Female<i class="fa fa-fw fa-female"></i></option>
     </select>
 
-    <label style="margin-top:15px;">Address:</label>
+    <label>Address:</label>
     <div class="input-group">
       <i class="fa fa-map-marker-alt"></i>
       <input type="text" placeholder="Enter address" required>
@@ -230,7 +222,7 @@
       <option value="Widowed">Widowed</option>
     </select>
 
-    <label style="margin-top:15px;">Birthday:</label>
+    <label">Birthday:</label>
     <div class="birthday-group">
 
       <select>
